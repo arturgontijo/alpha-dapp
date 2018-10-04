@@ -1,0 +1,52 @@
+{
+  "nested": {
+    "ObjectDetectionRequest": {
+      "fields": {
+        "model": {
+          "type": "string",
+          "id": 1
+        },
+        "imgPath": {
+          "type": "string",
+          "id": 2
+        },
+        "confidence": {
+          "type": "string",
+          "id": 3
+        }
+      }
+    },
+    "Result": {
+      "fields": {
+        "deltaTime": {
+          "type": "string",
+          "id": 1
+        },
+        "boxes": {
+          "type": "string",
+          "id": 2
+        },
+        "classIds": {
+          "type": "string",
+          "id": 3
+        },
+        "confidences": {
+          "type": "string",
+          "id": 4
+        },
+        "imgBase64": {
+          "type": "string",
+          "id": 5
+        }
+      }
+    },
+    "Detect": {
+      "methods": {
+        "detect": {
+          "requestType": "ObjectDetectionRequest",
+          "responseType": "Result"
+        }
+      }
+    }
+  }
+}

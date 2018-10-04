@@ -14,15 +14,16 @@ import Services from './components/services';
 import Job from './components/job';
 import { NETWORKS, AGI } from './util';
 
-import DefaultService from './components/service/default';
+import DefaultService from './components/service/default.grpc';
 import AlphaExampleService from './components/service/alpha_example';
 import FaceDetectService from './components/service/face_detect';
 import FaceLandmarksService from './components/service/face_landmarks';
 import FaceAlignmentService from './components/service/face_alignment';
 import FaceRecognitionService from './components/service/face_recognition';
 import ExchangeService from './components/service/exchange';
-import ResNetImageRecon from './components/service/resnet_img_recon';
+import ObjectDetection from './components/service/cnn_object_detection';
 
+import jsonDescriptor from "./service_spec/object_detection.json";
 
 class App extends React.Component {
 
@@ -46,7 +47,7 @@ class App extends React.Component {
       'face_alignment': FaceAlignmentService,
       'face_recognition': FaceRecognitionService,
       'Exchange AGI for BTC': ExchangeService,
-      'SNET_BH/ResNetService': ResNetImageRecon
+      'SNET_BH/CNN_ObjectDetection_gRPC': ObjectDetection
     };
     this.serviceDefaultComponent = DefaultService;
     
@@ -170,7 +171,7 @@ class App extends React.Component {
                 }
                 {
                   this.state.selectedAgent && this.state.chainId && this.state.account &&
-                  <Job network={this.state.chainId} account={this.state.account} agent={this.state.selectedAgent} callComponent={this.state.serviceCallComponent} token={this.tokenInstance} />
+                  <Job network={this.state.chainId} account={this.state.account} agent={this.state.selectedAgent} callComponent={this.state.serviceCallComponent} token={this.tokenInstance} jsonDescriptor={jsonDescriptor}/>
                 }
               </Col>
             </Row>
