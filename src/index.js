@@ -23,7 +23,11 @@ import FaceRecognitionService from './components/service/face_recognition';
 import ExchangeService from './components/service/exchange';
 import ObjectDetection from './components/service/cnn_object_detection';
 
+<<<<<<< HEAD
 import jsonDescriptor from "./service_spec/object_detection.json";
+=======
+import jsonDescriptor from "./example.json";
+>>>>>>> f466400355bc5daa7a7b04c1a2f7ad634cabc9b0
 
 class App extends React.Component {
 
