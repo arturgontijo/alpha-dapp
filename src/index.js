@@ -21,9 +21,9 @@ import FaceLandmarksService from './components/service/face_landmarks';
 import FaceAlignmentService from './components/service/face_alignment';
 import FaceRecognitionService from './components/service/face_recognition';
 import ExchangeService from './components/service/exchange';
-import ObjectDetection from './components/service/cnn_object_detection';
+// import ObjectDetection from './components/service/cnn_object_detection';
 
-import jsonDescriptor from "./service_spec/object_detection.json";
+import jsonDescriptor from "./service_spec/service_proto.json";
 
 class App extends React.Component {
 
@@ -46,8 +46,7 @@ class App extends React.Component {
       'face_landmarks': FaceLandmarksService,
       'face_alignment': FaceAlignmentService,
       'face_recognition': FaceRecognitionService,
-      'Exchange AGI for BTC': ExchangeService,
-      'SNET_BH/CNN_ObjectDetection_gRPC': ObjectDetection
+      'Exchange AGI for BTC': ExchangeService
     };
     this.serviceDefaultComponent = DefaultService;
     
