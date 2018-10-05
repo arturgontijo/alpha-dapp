@@ -100,10 +100,8 @@ export default class ProtoBuf {
  * @param {*} callback 
  */
   rpcImpl(method, requestData, callback) {
-    debugger;
     const RequestType   = this.root.lookupType(method.requestType);
     const ResponseType  = this.root.lookupType(method.responseType);
-    debugger;
     //Check request message
     if (!this.isValidMessage(RequestType,requestData))
       throw Error("Request not verified")
